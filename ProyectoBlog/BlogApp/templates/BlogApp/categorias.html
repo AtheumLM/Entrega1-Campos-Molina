@@ -14,13 +14,21 @@
 </head>
 <body>
   
-  {% for cate in categorias %}
+    <table>
+        <thead>
+            <td> Rubro </td>
+            <td> Descripcion </td>
 
-    {{cate.Rubro}}
+        </thead>
 
-  {% endfor %}
+        {% for categoria in Categorias %}
+        <tr>
+            <td> {{categoria.Rubro}}</td>
+            <td> {{categoria.Descripcion}}</td>
+        </tr>
+        {% endfor %}    
+    </table>
 
 </body>
 </html>
-
 {% endblock %}
