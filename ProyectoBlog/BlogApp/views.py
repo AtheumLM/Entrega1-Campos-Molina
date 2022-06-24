@@ -7,7 +7,7 @@ def inicio(request):
   return render(request,"BlogApp/inicio.html")
 
 def noticias(request):
-  return render(request,"BlogApp/categorias.html")
+  return render(request,"BlogApp/noticias.html")
 
 def publicaciones(request):
   return render(request,"BlogApp/publicaciones.html")
