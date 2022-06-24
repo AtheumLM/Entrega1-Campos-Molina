@@ -5,12 +5,18 @@ from BlogApp.models import *
 
 class categoriaAdmin(admin.ModelAdmin):
 
-  list_display = ("Nombre","Descripcion")
+  list_display = ("Rubro","Descripcion")
 
 admin.site.register(Categoria,categoriaAdmin)
 
 class publicacionAdmin(admin.ModelAdmin):
 
-  list_display = ("Titulo","Descripcion")
+  list_display = ("Titulo","Texto")
 
 admin.site.register(Publicacion,publicacionAdmin)
+
+class usuarioAdmin(admin.ModelAdmin):
+
+  list_display = ("Nombre","Apellido","Email","Pais","Edad")
+
+admin.site.register(Usuario,usuarioAdmin)
