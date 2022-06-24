@@ -9,12 +9,12 @@ class Usuario(models.Model):
   Pais=models.CharField(max_length=30)
   Edad=models.IntegerField()
 
-class Categoria(models.Model):
+class Categorias(models.Model):
 
   Rubro = models.CharField(max_length=50)
   Descripcion = models.CharField(max_length=200)
 
-class Publicacion(Categoria):
+class Publicacion(Categorias):
 
   Titulo = models.CharField(max_length=60)
   Texto = models.CharField(max_length=500)

@@ -7,17 +7,11 @@ from BlogApp.models import *
 def inicio(request):
   return render(request,"BlogApp/inicio.html")
 
-def noticias(request):
-  return render(request,"BlogApp/noticias.html")
+def categorias(request):
 
-def crearCategoria(request):
+  cat = Categorias.objects.all()
 
-  nombre = "Steam,"
-
-  descripcion = "Novedades sobre plataforma Steam"
-
-  nuevaCategoria = Categoria(Nombre = nombre, Descripcion = descripcion)
-  nuevaCategoria.save()
+  return render(request,"BlogApp/categorias.html",{"Categorias": cat})
 
 def publicaciones(request):
   return render(request,"BlogApp/publicaciones.html")

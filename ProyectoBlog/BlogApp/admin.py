@@ -7,7 +7,7 @@ class categoriaAdmin(admin.ModelAdmin):
 
   list_display = ("Rubro","Descripcion")
 
-admin.site.register(Categoria,categoriaAdmin)
+admin.site.register(Categorias,categoriaAdmin)
 
 class publicacionAdmin(admin.ModelAdmin):
 
