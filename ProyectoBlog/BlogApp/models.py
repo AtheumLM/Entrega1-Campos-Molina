@@ -5,7 +5,7 @@ from django.db import models
 class Categoria(models.Model):
 
   Nombre = models.CharField(max_length=50)
-  descripcion = models.CharField(max_length=200)
-  
+  Descripcion = models.CharField(max_length=200)
+
 
 
