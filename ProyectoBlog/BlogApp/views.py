@@ -5,3 +5,6 @@ from django.http import HttpResponse
 
 def inicio(request):
   return render(request,"BlogApp/index.html")
+
+def categorias(request):
+  return render(request,"BlogApp/index.html")
