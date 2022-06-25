@@ -1,7 +1,9 @@
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from BlogApp.models import *
-from .forms import Crear_Categoria
+from .forms import *
+from django.db.models import Q
+
 
 # Create your views here.
 
@@ -37,13 +39,46 @@ def buscar_categoria(request):
   
   if request.method=='POST':
     Rubro=request.POST["Rubro"]
-    Rubros=Categorias.objects.filter(Rubro__icontains=Rubro)
+    Rubros=Categorias.objects.filter( Q(Rubro__icontains=Rubro) | Q(Descripcion__icontains=Rubro)).values()
     return render(request,"BlogApp/buscar_categoria.html",{'Rubros':Rubros})
   
   else:
 
     Rubro=[]
     return render(request,"BlogApp/buscar_categoria.html",{'Rubro':Rubro})
+
+def usuarios(request):
+
+  usu = Usuario.objects.all()
+  return render(request,"BlogApp/usuarios.html",{"Usuarios": usu})
+
+def crear_usuario(request):
+  if request.method=='POST':
+    usuario_formulario=Crear_Usuario(request.POST)
+    print(usuario_formulario)
+
+    if usuario_formulario.is_valid():
+      info=usuario_formulario.cleaned_data
+      usuario_creado= Usuario (Nombre=info['Nombre'], Apellido=info['Apellido'],Email=info['Email'],Pais=info['Pais'],Edad=info['Edad'],)
+      usuario_creado.save()
+      return redirect("usuarios")
+
+  usuario_formulario= Crear_Usuario()
+  print(usuario_formulario)
+  return render(request,"BlogApp/crear_usuario.html",{'form':usuario_formulario}) 
+
+def buscar_usuario(request):
+
+  if request.method=='POST':
+    Nombre=request.POST["Nombre"]
+    Nombres=Usuario.objects.filter( Q(Nombre__icontains=Nombre) | Q(Apellido__icontains=Nombre)).values()
+    return render(request,"BlogApp/buscar_usuario.html",{'Nombres': Nombres})
+  
+  else:
+
+    Nombre=[]
+    return render(request,"BlogApp/buscar_usuario.html",{'Nombre':Nombre})
+
 
 
 

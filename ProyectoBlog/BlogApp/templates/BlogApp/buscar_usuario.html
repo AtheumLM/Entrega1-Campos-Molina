@@ -7,21 +7,21 @@
     <title>Document</title>
 </head>
 <body>
-    <h2>Buscar Categoria</h2>
+    <h2>Buscar Usuario</h2>
     <form action="" method="POST">
         {% csrf_token %}
         <!-- <table>
-            {{form.as_table}}
+            {{forms.as_table}}
         </table> -->
-        <input type="char" name="Rubro" id="">
+        <input type="char" name="Nombre" id="">
         <input type="submit" value="buscar">
 
     </form>
 
     <h2>Resultado</h2>
     <ul>
-        {% for resultado in Rubros %}
-            <li>{{resultado.Rubro}} [{{resultado.Descripcion}}]</li>
+        {% for resultado in Nombres %}
+            <li>{{resultado.Nombre}} [{{resultado.Apellido}}]</li>
         {% endfor %}
     </ul>
     <br>
