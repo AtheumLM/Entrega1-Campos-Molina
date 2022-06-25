@@ -32,6 +32,21 @@ def crear_categoria(request):
 
   return render(request,"BlogApp/crear_categoria.html",{'form':categoria_formulario})
 
+
+def buscar_categoria(request):
+  
+  if request.method=='POST':
+    Rubro=request.POST["Rubro"]
+    Rubros=Categorias.objects.filter(Rubro__icontains=Rubro)
+    return render(request,"BlogApp/buscar_categoria.html",{'Rubros':Rubros})
+  
+  else:
+
+    Rubro=[]
+    return render(request,"BlogApp/buscar_categoria.html",{'Rubro':Rubro})
+
+
+
 def publicaciones(request):
   return render(request,"BlogApp/publicaciones.html")
 
