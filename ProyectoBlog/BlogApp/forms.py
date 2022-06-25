@@ -10,3 +10,7 @@ class Crear_Usuario(forms.Form):
     Email=forms.EmailField()
     Pais=forms.CharField(max_length=30)
     Edad=forms.IntegerField()
+
+class Crear_Publicacion(forms.Form):
+    Titulo = forms.CharField(max_length=60)
+    Texto = forms.CharField(max_length=500)

@@ -4,6 +4,34 @@
 
 {% block contenido %}
 
-<h> Seccion Publicaciones </h>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+    <table>
+        <thead>
+            <td> Titulo </td>
+            <td> Texto </td>
 
+        </thead>
+
+        {% for publicacion in Publicaciones %}
+        <tr>
+            <td> {{publicacion.Titulo}}</td>
+            <td> {{publicacion.Texto}}</td>
+        {% endfor %}    
+    </table>
+
+    <br>
+    <a href="{% url 'crear_publicacion' %}">+ Crear Nueva publicacion</a> <br>
+    <a href="{% url 'buscar_publicacion' %}">+ Buscar publicacion</a>
+
+</body>
+</html>
 {% endblock %}

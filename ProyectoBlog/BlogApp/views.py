@@ -83,7 +83,37 @@ def buscar_usuario(request):
 
 
 def publicaciones(request):
-  return render(request,"BlogApp/publicaciones.html")
+  pub=Publicacion.objects.all()
+  return render(request,"BlogApp/publicaciones.html",{'Publicaciones':pub})
+
+def crear_publicacion(request):
+
+  if request.method=='POST':
+    publicacion_formulario=Crear_Publicacion(request.POST)
+    print(publicacion_formulario)
+
+    if publicacion_formulario.is_valid():
+      info=publicacion_formulario.cleaned_data
+      publicacion_creada=Publicacion(Titulo=info['Titulo'],Texto=info['Texto'])
+      publicacion_creada.save()
+      return redirect("publicaciones")
+  
+  publicacion_formulario= Crear_Publicacion()
+  print(publicacion_formulario)
+  return render(request,"BlogApp/crear_publicaciones.html",{'form':publicacion_formulario}) 
+
+
+def buscar_publicacion(request):
+    if request.method=='POST':
+      Titulo=request.POST["Titulo"]
+      Titulos=Publicacion.objects.filter(Titulo__icontains=Titulo).values()
+      return render(request,"BlogApp/buscar_publicacion.html",{'Titulos': Titulos})
+  
+    else:
+
+      Titulo=[]
+      return render(request,"BlogApp/buscar_publicacion.html",{'Titulo':Titulo})
+
 
 def nosotros(request):
   return render(request,"BlogApp/nosotros.html")
