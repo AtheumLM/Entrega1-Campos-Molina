@@ -9,7 +9,9 @@ from django.db.models import Q
 
 def inicio(request):
   public= Publicacion.objects.all()[:1]
-  return render(request,"BlogApp/inicio.html",{'public':public})
+  usuar=Usuario.objects.all()[0:1]
+  categ=Categorias.objects.all()[1:2]
+  return render(request,"BlogApp/inicio.html",{'public':public,'usuar':usuar,'categ':categ})
 
 def categorias(request):
 
