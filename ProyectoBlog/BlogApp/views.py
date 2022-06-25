@@ -8,7 +8,8 @@ from django.db.models import Q
 # Create your views here.
 
 def inicio(request):
-  return render(request,"BlogApp/inicio.html")
+  public= Publicacion.objects.all()[:1]
+  return render(request,"BlogApp/inicio.html",{'public':public})
 
 def categorias(request):
 

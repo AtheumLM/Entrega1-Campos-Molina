@@ -14,8 +14,8 @@
 </head>
 <body>
   
-    <table>
-        <thead>
+    <table class="table">
+        <thead class="table-dark">
             <td> Nombre </td>
             <td> Apellido </td>
             <td> Email </td>
@@ -25,7 +25,7 @@
         </thead>
 
         {% for usuario in Usuarios %}
-        <tr>
+        <tr class="table-success">
             <td> {{usuario.Nombre}}</td>
             <td> {{usuario.Apellido}}</td>
             <td> {{usuario.Email}}</td>

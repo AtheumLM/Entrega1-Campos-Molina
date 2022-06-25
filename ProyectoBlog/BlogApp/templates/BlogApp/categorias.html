@@ -14,15 +14,15 @@
 </head>
 <body>
   
-    <table>
-        <thead>
+    <table class="table">
+        <thead class="table-dark">
             <td> Rubro </td>
             <td> Descripcion </td>
 
         </thead>
 
         {% for categoria in Categorias %}
-        <tr>
+        <tr class="table-success">
             <td> {{categoria.Rubro}}</td>
             <td> {{categoria.Descripcion}}</td>
         </tr>

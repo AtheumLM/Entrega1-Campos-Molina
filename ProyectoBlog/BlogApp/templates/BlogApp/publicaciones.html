@@ -14,15 +14,15 @@
 </head>
 <body>
   
-    <table>
-        <thead>
+    <table class="table">
+        <thead class="table-dark">
             <td> Titulo </td>
             <td> Texto </td>
 
         </thead>
 
         {% for publicacion in Publicaciones %}
-        <tr>
+        <tr class="table-success">
             <td> {{publicacion.Titulo}}</td>
             <td> {{publicacion.Texto}}</td>
         {% endfor %}    
