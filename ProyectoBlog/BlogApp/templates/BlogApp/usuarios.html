@@ -4,41 +4,44 @@
 
 {% block contenido %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  
+<div class="card">
+  <div class="card-header">
+    <td> <a name="" id="" class="btn btn-info" href="crear_usuario" role="button">Agregar nuevo usuario</a>
+  </div>
+  <div class="card-body">
+    <h4 class="card-title">usuarios:</h4>
+    
     <table class="table">
-        <thead class="table-dark">
-            <td> Nombre </td>
-            <td> Apellido </td>
-            <td> Email </td>
-            <td> Pais </td>
-            <td> Edad </td>
-
-        </thead>
-
-        {% for usuario in Usuarios %}
-        <tr class="table-success">
-            <td> {{usuario.Nombre}}</td>
-            <td> {{usuario.Apellido}}</td>
-            <td> {{usuario.Email}}</td>
-            <td> {{usuario.Pais}}</td>
-            <td> {{usuario.Edad}}</td>
+      <thead>        
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Email</th>   
+          <th>Pais</th>  
+          <th>Edad</th>       
         </tr>
-        {% endfor %}    
+      </thead>
+      <tbody>   
+        {% for usuario in Usuarios %}
+        <tr>
+          <td>{{usurio.id}}</td>
+          <td>{{usuario.Nombre}}</td>
+          <td>{{usuario.Apellido}}</td>     
+          <td>{{usuario.Email}}</td>  
+          <td>{{usuario.Pais}}</td>  
+          <td>{{usuario.Edad}}</td>       
+          
+        </tr>
+        {% endfor %}
+      </tbody>
     </table>
+    
 
-    <br>
-    <a href="{% url 'crear_usuario' %}">+ Crear Nuevo Usuario</a> <br>
-    <a href="{% url 'buscar_usuario' %}">+ Buscar Usuario</a>
+  </div>
+  <div class="card-footer text-muted">
+    Footer
+  </div>
+</div>
 
-</body>
-</html>
 {% endblock %}

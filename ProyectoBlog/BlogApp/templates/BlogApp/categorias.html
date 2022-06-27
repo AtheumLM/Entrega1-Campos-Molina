@@ -4,35 +4,41 @@
 
 {% block contenido %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  
+
+<div class="card">
+  <div class="card-header">
+    <td> <a name="" id="" class="btn btn-info" href="crear_categoria" role="button">Agregar nueva categoria</a>
+  </div>
+  <div class="card-body">
+    <h4 class="card-title">Categorias:</h4>
+    
     <table class="table">
-        <thead class="table-dark">
-            <td> Rubro </td>
-            <td> Descripcion </td>
-
-        </thead>
-
-        {% for categoria in Categorias %}
-        <tr class="table-success">
-            <td> {{categoria.Rubro}}</td>
-            <td> {{categoria.Descripcion}}</td>
+      <thead>        
+        <tr>
+          <th>ID</th>
+          <th>Rubro</th>
+          <th>Descripción</th>      
         </tr>
-        {% endfor %}    
+      </thead>
+      <tbody>   
+        {% for categoria in Categorias %}
+        <tr>
+          <td>{{categoria.id}}</td>
+          <td>{{categoria.Rubro}}</td>
+          <td>{{categoria.Descripcion}}</td>          
+          
+        </tr>
+        {% endfor %}
+      </tbody>
     </table>
+    
 
-    <br>
-    <a href="{% url 'crear_categoria' %}">+ Crear Nueva Categoria</a> <br>
-    <a href="{% url 'buscar_categoria' %}">+ Buscar Categoria</a>
+  </div>
+  <div class="card-footer text-muted">
+    Footer
+  </div>
+</div>
 
-</body>
-</html>
+
 {% endblock %}
+

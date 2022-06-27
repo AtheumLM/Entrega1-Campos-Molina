@@ -4,34 +4,41 @@
 
 {% block contenido %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  
+<div class="card">
+  <div class="card-header">
+    <td> <a name="" id="" class="btn btn-info" href="crear_publicacion" role="button">Crear nueva publicación</a>
+  </div>
+  <div class="card-body">
+    <h4 class="card-title">Publicaciones:</h4>
+    
     <table class="table">
-        <thead class="table-dark">
-            <td> Titulo </td>
-            <td> Texto </td>
-
-        </thead>
-
+      <thead>        
+        <tr>
+          <th>ID</th>
+          <th>Titulo</th>
+          <th>Texto</th>
+                   
+        </tr>
+      </thead>
+      <tbody>   
         {% for publicacion in Publicaciones %}
-        <tr class="table-success">
-            <td> {{publicacion.Titulo}}</td>
-            <td> {{publicacion.Texto}}</td>
-        {% endfor %}    
+        <tr>
+          <td>{{publicacion.id}}</td>
+          <td>{{publicacion.Titulo}}</td>
+          <td>{{publicacion.Texto}}</td>     
+               
+          
+        </tr>
+        {% endfor %}
+      </tbody>
     </table>
+    
 
-    <br>
-    <a href="{% url 'crear_publicacion' %}">+ Crear Nueva publicacion</a> <br>
-    <a href="{% url 'buscar_publicacion' %}">+ Buscar publicacion</a>
+  </div>
+  <div class="card-footer text-muted">
+    Footer
+  </div>
+</div>
 
-</body>
-</html>
+
 {% endblock %}
