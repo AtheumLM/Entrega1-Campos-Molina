@@ -5,23 +5,34 @@
 {% block contenido %}
 
 <body>
-    <h2>Buscar Publicacion</h2>
-    <form action="" method="POST">
-        {% csrf_token %}
-        <!-- <table>
-            {{forms.as_table}}
-        </table> -->
-        <input type="char" name="Titulo" id="">
-        <input type="submit" value="buscar">
-
-    </form>
-
-    <h2>Resultado</h2>
-    <ul>
-        {% for resultado in Titulos %}
-            <li>{{resultado.Titulo}} [{{resultado.Texto}}]</li>
-        {% endfor %}
-    </ul>
+  <div class="container px-5">
+    <body>
+        <h2>Buscar Publicación</h2>
+        
+        <form action="" method="POST">
+            {% csrf_token %}
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Buscar Publicación </label>
+              <input type="char" class="form-control" name="Titulo" id="" aria-describedby="tituloHelp">
+              <div id="tituloHelp" class="form-text">Agregue palabra clave para realizar la busqueda</div>
+            </div>    
+            <button type="submit" class="btn btn-primary">Buscar</button>
+        </form>
+        <br>
+        <h4>Resultado</h4>
+        <div class="container px-6">
+            {% for resultado in Titulos %}
+            <div class="list-group">
+              <a href="#" class="list-group-item list-group-item-action" aria-current="true">
+                <div class="d-flex w-100 justify-content-between">
+                  <h6 class="mb-1">{{resultado.Titulo}}</h6>
+                    <small>3 days ago</small>
+                </div>
+                <p class="mb-1">{{resultado.Texto}}</p>
+                <small>And some small print.</small>
+              </a>
+            </div>        
+            {% endfor %}
     <br>
     <a href="{% url 'inicio' %}">+ Inicio</a>
 </body>
