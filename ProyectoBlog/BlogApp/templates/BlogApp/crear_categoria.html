@@ -4,18 +4,18 @@
 
 {% block contenido %}
 
-
+<div class="container px-5">
 <body>
     <form action="" method="POST">
         {% csrf_token %}
         <table>
             {{form.as_table}}
         </table>
-        <input type="submit" value="enviar">
+        <button type="submit" class="btn btn-primary">Crear</button>
 
     </form>
     <br>
     <a href="{% url 'inicio' %}">+ Volver a Inicio</a>
 </body>
-          
+</div> 
 {% endblock %}

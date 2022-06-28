@@ -3,8 +3,7 @@
 <title> {% block titulo%} Crear usuario {% endblock %} </title>
 
 {% block contenido %}
-
-<body>
+<div class="container px-5">
     <form action="" method="POST">
         {% csrf_token %}
         <table>
@@ -16,5 +15,6 @@
     <br>
     <a href="{% url 'inicio' %}">+ Volver a Inicio</a>
 </body>
-
+</div>
+<body>
 {% endblock %}

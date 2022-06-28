@@ -3,7 +3,7 @@
 <title> {% block titulo%} Crear Publicación {% endblock %} </title>
 
 {% block contenido %}
-
+<div class="container px-5">
 <body>
     <form action="" method="POST">
         {% csrf_token %}
@@ -17,5 +17,5 @@
     <a href="{% url 'inicio' %}">+ Volver a Inicio</a>
 </body>
 </html>
-          
+</div>         
 {% endblock %}
