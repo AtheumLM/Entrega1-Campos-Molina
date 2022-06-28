@@ -7,6 +7,7 @@ Es un proyecto para lograr un blog para la comunidad Gamer, en donde:
 * Se oriente a los usuarios para actualizaciones de hardware o software.
 * Se cree una comunidad para discusiones, consultas y capacitaciones, informales y sin fin de lucro.
 * Seria de libre expresion con oportunidades de postulaciones y ofertas laborales.
+* Fomente el tranajo en equipo
 
 # Instalacion
 Descargar .zip de GitHub 
@@ -34,6 +35,7 @@ $ Sobre Nosotros
 $ Contacto
     Proximamente habra un formulario de ingreso, para solicitudes de soporte, intereses comunes, o solo contactar a los autores del blog.
 
+En inicio el blog cuenta con breve descipcion del mismo, Ultima Categoria ingresada, Usuario mas relevante y una publicacion a eleccion.
 
 
 
