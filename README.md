@@ -21,18 +21,18 @@ Ejecutar desde nivel manage.py en la terminal el siguiente codigo
 esto retornara el siguiente host que apunta a la pc en uso http://127.0.0.1:8000/
 
 La primera vision del proyecto es la pagina de inicio que permite recorrer mediante la barra superior en:
-$ Publicaciones 
+* Publicaciones 
     Permite observar las publicaciones realizadas por los usuarios, tanto titulo como texto de la misma. 
     En esta misma seccion podemos crear una nueva publicacion desde el boton "Crear nueva publicacion"
-$ Categorias
+* Categorias
     Permite observar las categorias realizadas por los administradores, se observa Rubro y Descripcion.
     Aqui se puede crear una categoria para demostrar la funcionalidad de la misma, la idea futura radica en restringir este acceso solo para administradores
-$ Usuarios
+* Usuarios
     Permite observar los usuarios registrados hasta la fecha con sus respectivos campos tanto como Nombre, Apellido...
     En esta misma seccion podemos ingresar un nuevo usuario desde el boton "Agregar nuevo usuario"
-$ Sobre Nosotros
+* Sobre Nosotros
     Se muestran nuestros Apellidos y Nombres
-$ Contacto
+* Contacto
     Proximamente habra un formulario de ingreso, para solicitudes de soporte, intereses comunes, o solo contactar a los autores del blog.
 
 En inicio el blog cuenta con breve descipcion del mismo, Ultima Categoria ingresada, Usuario mas relevante y una publicacion a eleccion.
