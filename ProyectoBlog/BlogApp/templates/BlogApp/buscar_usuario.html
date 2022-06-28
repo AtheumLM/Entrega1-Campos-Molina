@@ -4,26 +4,39 @@
 
 {% block contenido %}
 
-<body>
-    <h2>Buscar Usuario</h2>
-    <form action="" method="POST">
-        {% csrf_token %}
-        <!-- <table>
-            {{forms.as_table}}
-        </table> -->
-        <input type="char" name="Nombre" id="">
-        <input type="submit" value="buscar">
+<div class="container px-5">
+  <body>
+      <h2>Buscar Categoria</h2>
+      
+      <form action="" method="POST">
+          {% csrf_token %}
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Buscar Usuario </label>
+            <input type="char" class="form-control" name="Nombre" id="" aria-describedby="rubroHelp">
+            <div id="rubroHelp" class="form-text">Agregue palabra clave para realizar la busqueda</div>
+          </div>    
+          <button type="submit" class="btn btn-primary">Buscar</button>
+      </form>
+      <br>
+      <h4>Resultado</h4>
+      <div class="container px-6">
+          {% for resultado in Nombres %}
+          <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action" aria-current="true">
+              <div class="d-flex w-100 justify-content-between">
+                <h6 class="mb-1">{{resultado.Nombre}}</h6>
+                  <small>  </small> 
+              </div>
+              <p class="mb-1">{{resultado.Apellido}}</p>
+              <small> </small>
+            </a>
+          </div>        
+          {% endfor %}
 
-    </form>
-
-    <h2>Resultado</h2>
-    <ul>
-        {% for resultado in Nombres %}
-            <li>{{resultado.Nombre}} [{{resultado.Apellido}}]</li>
-        {% endfor %}
-    </ul>
-    <br>
-    <a href="{% url 'inicio' %}">+ Inicio</a>
-</body>
+      </div>
+      <br>
+     
+  </body>
+</div>
           
 {% endblock %}
